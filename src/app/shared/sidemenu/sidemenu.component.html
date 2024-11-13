@@ -1,0 +1,41 @@
+<div
+  id="menu"
+  class="bg-[#ffffff] min-h-screen z-10 text-slate-300 w-64 left-0 h-screen overflow-y-scroll"
+>
+  <div id="logo" class="my-4 px-6 mt-8">
+    <h1 class="text-lg md:text-2xl font-bold text-black">
+      DI<span class="text-blue-500" style="color: #9B86BE;">H</span>.
+    </h1>
+    <p class="text-slate-500 text-sm">Maneja tus acciones y actividades</p>
+  </div>
+  <div class="my-4 px-6 border-b border-slate-700 mb-2"></div>
+  <div id="profile" class="px-6 py-10 ">
+    <p class="text-slate-500">Bienvenido de vuelta</p>
+    <a href="#" class="inline-flex space-x-2 items-center">
+      <span>
+        <img
+          class="rounded-full w-8 h-8"
+          src="https://i.pinimg.com/736x/c8/1d/19/c81d1978d6448dc75da92c13d96d9321.jpg"
+          alt=""
+        />
+      </span>
+      <span class="text-sm md:text-base font-bold" style="color: #9B86BE;"> Jairo Freire </span>
+    </a>
+  </div>
+  <div id="nav" class="w-full px-6">
+
+    @for(item of menuItems; track $index){
+      <a
+        [routerLink]="item.path"
+        routerLinkActive="bg-[#363062]"
+        class="bg-[#9B86BE] w-full px-4 inline-flex space-x-2 items-center border-b border-slate-700 py-3 hover:bg-gray-400 transition ease-linear duration-150 rounded-lg w-[105%]"
+      >
+        <div class="flex flex-col">
+          <span class="text-lg font-bold leading-5 text-white">{{item.title}}</span>
+          <span class="text-sm text-white/50 hidden md:block">{{item.path}}</span>
+        </div>
+      </a>
+    }
+    
+  </div>
+</div>
