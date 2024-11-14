@@ -5,8 +5,8 @@ export interface Shops{
 }
 
 export interface HeadersUsers {
-    Nombre: string,
-    Dueno: string,
-    Estado: string,
-    Acciones: string
+    name: string,
+    owner: string,
+    state: string,
+    actions: string
 }
