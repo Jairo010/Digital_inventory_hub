@@ -11,7 +11,13 @@ import { HeadersUsers, Users } from '../../interfaces/users.interface';
 })
 export class TableComponent {
 
-  @Input() data! : Users[] ;
-  @Input() headers! : HeadersUsers ;
+  @Input() data: { [key: string]: any }[] = [];
+  @Input() headers: { [key: string]: string } = {};
+  @Input() keyMap: { [key: string]: string } = {};
+
+  sortHeaders = (a: any, b: any): number => {
+    const order = Object.keys(this.headers);
+    return order.indexOf(a.key) - order.indexOf(b.key);
+  };
   
 }

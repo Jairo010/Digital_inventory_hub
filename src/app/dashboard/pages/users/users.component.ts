@@ -33,4 +33,10 @@ export class UsersComponent {
     emails: "Emails",
     actions: "Acciones"
   }
+
+  public keyMap = {
+    users: "user",
+    rol: "rol",
+    emails: "email",
+  };
 }
