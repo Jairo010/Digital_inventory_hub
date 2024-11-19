@@ -6,6 +6,10 @@ export const routes: Routes = [
         loadComponent: () => import('./session/login/login.component').then(m => m.LoginComponent)
     },
     {
+        path: 'signup',
+        loadComponent: () => import('./session/signup/signup.component').then(m => m.SignupComponent)
+    },
+    {
         //Main route
         path: 'dashboard',
         loadComponent: () => import('./dashboard/dashboard.component').then(m => m.DashboardComponent),
