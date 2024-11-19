@@ -1,1 +1,12 @@
-<p>dashboard works!</p>
+<div class="flex text-black w-screen h-screen antialiased selection:bg-blue-600 selection:text-white overflow-hidden bg-gray-200">
+    <app-sidemenu class="w-64 bg-gray-800 text-white h-full overflow-auto"></app-sidemenu>
+
+    <div class="flex-1 flex flex-col h-full">
+        <div class="text-white p-4 shadow-md h-[100px] bg-[#9B86BE]">
+        </div>
+
+        <div class="flex-grow bg-white border border-gray-300 shadow-lg m-4 p-4 overflow-hidden">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
