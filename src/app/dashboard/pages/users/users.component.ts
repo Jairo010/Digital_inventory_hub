@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { TableComponent } from '../../../shared/table/table.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-users',
   standalone: true,
-  imports: [TableComponent],
+  imports: [TableComponent, CommonModule],
   templateUrl: './users.component.html',
   styleUrl: './users.component.css'
 })

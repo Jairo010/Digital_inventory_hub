@@ -1,5 +1,7 @@
-// tailwind.config.js
-module.exports = {
+import withMT from "@material-tailwind/html/utils/withMT";
+ 
+/** @type {import('tailwindcss').Config} */
+module.exports = withMT({
   content: [
     "./src/**/*.{html,ts}",
   ],
@@ -7,4 +9,4 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-}
+});
