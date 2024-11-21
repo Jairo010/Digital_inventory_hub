@@ -28,9 +28,10 @@ export const routes: Routes = [
         ]
     },
     {
-        //Dafault route to redirect to
+        //Default route to redirect to
         path: '',
-        redirectTo: '/dashboard',
+        redirectTo: '/login',
         pathMatch: 'full'
     }
 ];
+
