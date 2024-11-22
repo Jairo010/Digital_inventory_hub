@@ -10,6 +10,15 @@ import { CommonModule } from '@angular/common';
   styleUrl: './users.component.css'
 })
 export class UsersComponent {
+  isModalOpen: boolean = false;
+
+  openModal() {
+    this.isModalOpen = true;
+  }
+
+  closeModal() {
+    this.isModalOpen = false;
+  }
   public users = [
     {
       user: "Jairo",
