@@ -1,2 +1,65 @@
-<p>shops works!</p>
+<div class="grid justify-items-end p-5">
+  <button
+    (click)="openModal()"
+    data-dialog-target="add-shops-modal"
+    ngClass="bg-[#443D8B] w-36 h-10 rounded-full py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2"
+    type="button"
+  >
+    Agregar
+  </button>
+  <div
+    [ngClass]="{
+      'opacity-100 pointer-events-auto': isModalOpen,
+      'opacity-0 pointer-events-none': !isModalOpen
+    }"
+    class="fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 backdrop-blur-sm transition-opacity duration-300"
+  >
+    <div
+      class="relative mx-auto w-full max-w-[24rem] rounded-lg overflow-hidden shadow-sm bg-white"
+    >
+      <div class="relative flex flex-col bg-white">
+        <div
+          class="relative m-2.5 items-center flex justify-center text-white h-24 rounded-md bg-[#9B86BE]"
+        >
+          <h3 class="text-2xl">Agregar Negocios</h3>
+        </div>
+        <div class="flex flex-col gap-4 p-6">
+          <div class="w-full max-w-sm min-w-[200px]">
+            <label class="block mb-2 text-sm text-[#443D8B]"> Nombre </label>
+            <input
+              type="text"
+              class="w-full bg-transparent placeholder:text-[#9B86BE] text-[#9B86BE] text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+              placeholder="Nombre"
+            />
+          </div>
+          <div class="w-full max-w-sm min-w-[200px]">
+            <label class="block mb-2 text-sm text-[#443D8B]"> Duenio </label>
+            <input
+              type="text"
+              class="w-full bg-transparent placeholder:text-[#9B86BE] text-[#9B86BE] text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+              placeholder="Duenio"
+            />
+          </div>
+          <div class="w-full max-w-sm min-w-[200px]">
+            <label class="block mb-2 text-sm text-[#443D8B]"> Estado </label>
+            <input
+              type="text"
+              class="w-full bg-transparent placeholder:text-[#9B86BE] text-[#9B86BE] text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+              placeholder="Estado"
+            />
+          </div>
+        </div>
+        <div class="p-6 pt-0">
+          <button
+            (click)="closeModal()"
+            class="w-full rounded-md bg-[#9B86BE] py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            type="button"
+          >
+            Agregar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <app-table [data]="shops" [headers]="headers" [keyMap]="keyMap"></app-table>

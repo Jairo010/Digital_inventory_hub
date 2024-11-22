@@ -1,25 +1,27 @@
 <div class="grid justify-items-end p-5">
   <button
-    data-dialog-target="sign-in-modal"
+    (click)="openModal()"
+    data-dialog-target="add-shops-modal"
     ngClass="bg-[#443D8B] w-36 h-10 rounded-full py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2"
     type="button"
   >
     Agregar
   </button>
   <div
-    data-dialog-backdrop="sign-in-modal"
-    data-dialog-backdrop-close="true"
-    ngClass="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300"
+    [ngClass]="{
+      'opacity-100 pointer-events-auto': isModalOpen,
+      'opacity-0 pointer-events-none': !isModalOpen
+    }"
+    class="fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 backdrop-blur-sm transition-opacity duration-300"
   >
     <div
-      data-dialog="sign-in-modal"
-      ngClass="relative mx-auto w-full max-w-[24rem] rounded-lg overflow-hidden shadow-sm"
+      class="relative mx-auto w-full max-w-[24rem] rounded-lg overflow-hidden shadow-sm bg-white"
     >
       <div class="relative flex flex-col bg-white">
         <div
           class="relative m-2.5 items-center flex justify-center text-white h-24 rounded-md bg-[#9B86BE]"
         >
-          <h3 class="text-2xl">Agregar usuarios</h3>
+          <h3 class="text-2xl">Agregar Usuario</h3>
         </div>
         <div class="flex flex-col gap-4 p-6">
           <div class="w-full max-w-sm min-w-[200px]">
@@ -46,7 +48,6 @@
               placeholder="Correo"
             />
           </div>
-
           <div class="w-full max-w-sm min-w-[200px]">
             <label class="block mb-2 text-sm text-[#443D8B]"> Cedula </label>
             <input
@@ -58,6 +59,7 @@
         </div>
         <div class="p-6 pt-0">
           <button
+            (click)="closeModal()"
             class="w-full rounded-md bg-[#9B86BE] py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
             type="button"
           >
