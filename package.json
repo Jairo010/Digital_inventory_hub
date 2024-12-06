@@ -22,6 +22,7 @@
     "@angular/router": "^17.1.0",
     "@angular/ssr": "^17.1.3",
     "@material-tailwind/html": "^2.3.2",
+    "@supabase/supabase-js": "^2.47.1",
     "express": "^4.18.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
