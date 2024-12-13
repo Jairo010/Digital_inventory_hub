@@ -65,4 +65,15 @@ export class ShopsService {
     }
     return data;
   }
+
+  async get_bussines_with_user(): Promise<any> {
+    const { data, error } = await this.supabaseService.supabase
+      .rpc('get_businesses_and_owners');
+
+    if (error) {
+      console.error('Error deleting business:', error);
+      throw new Error(error.message);
+    }
+    return data;
+  }
 }
