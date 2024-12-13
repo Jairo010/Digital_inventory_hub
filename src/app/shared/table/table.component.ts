@@ -19,5 +19,9 @@ export class TableComponent {
     const order = Object.keys(this.headers);
     return order.indexOf(a.key) - order.indexOf(b.key);
   };
+
+  public getValue(row: any, key: string): any {
+    return key.split('.').reduce((acc, curr) => acc && acc[curr], row);
+  }
   
 }

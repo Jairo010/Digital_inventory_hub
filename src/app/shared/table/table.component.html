@@ -60,7 +60,7 @@
             </div>
           </ng-container>
           <ng-template #showData>
-            {{ row[keyMap[key.key]] }}
+            {{ getValue(row, keyMap[key.key]) }}
           </ng-template>
         </td>
       </tr>

@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TableComponent } from '../../../shared/table/table.component';
 import { CommonModule } from '@angular/common';
+import { UsersService } from '../../../services/users/users.service';
 
 @Component({
   selector: 'app-users',
@@ -11,6 +12,24 @@ import { CommonModule } from '@angular/common';
 })
 export class UsersComponent {
   isModalOpen: boolean = false;
+  public users = [];
+
+  userService = inject(UsersService);
+
+  constructor (){
+    this.getShops();
+  } 
+
+  async getShops(){
+    await this.userService.getUsers().then(data =>{
+      this.users = data;
+      console.log(data);
+      
+    }).catch(error =>{
+      console.log(error);
+      
+    })
+  }
 
   openModal() {
     this.isModalOpen = true;
@@ -19,23 +38,6 @@ export class UsersComponent {
   closeModal() {
     this.isModalOpen = false;
   }
-  public users = [
-    {
-      user: "Jairo",
-      rol: "Admin",
-      email: "jairo12@gmail.com"
-    },
-    {
-      user: "Jairo",
-      rol: "Admin",
-      email: "jairo12@gmail.com"
-    },
-    {
-      user: "Jairo",
-      rol: "Admin",
-      email: "jairo12@gmail.com"
-    }
-  ];
 
   public headers = {
     users: "Usuarios",
@@ -45,7 +47,7 @@ export class UsersComponent {
   }
 
   public keyMap = {
-    users: "user",
+    users: "nickname",
     rol: "rol",
     emails: "email",
   };
